@@ -1,0 +1,9 @@
+<?php
+/** @var Test\Delivery\Helper\Data $helper */
+$helper = $this->helper(Test\Delivery\Helper\Data::class);
+?>
+<?php if ($helper->allowDisplayOnBackend($helper::DELIVERY_TIME)) : ?>
+    <div class="block-content">
+        <p><label><?= __('Delivery Time : ')?></label><span><?= $block->getDeliveryTime()?></span></p>
+    </div>
+<?php endif; ?>

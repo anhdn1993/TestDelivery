@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+ * @package Amasty_Checkout
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="amasty.checkout.success.details" template="Test_Delivery::onepage/details.phtml">
+                <block name="test_delivery_date_success"
+                       ifconfig="icdelivery/general/enabled"
+                       template="Test_Delivery::onepage/success/delivery_date.phtml"
+                       class="Test\Delivery\Block\Sales\Order\Info\Delivery" />
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

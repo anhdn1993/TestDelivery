@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="test_delivery_holidays" resource="default">
+        <column xsi:type="int" name="holiday_id" nullable="false" identity="true" unsigned="true" comment="Holiday Id"/>
+
+        <column xsi:type="boolean" name="each_year" comment="has holiday for each year"/>
+        <column xsi:type="boolean" name="each_month" comment="has holiday for each month"/>
+
+        <column xsi:type="int" name="from_day" nullable="false" unsigned="true" comment="holiday from day"/>
+        <column xsi:type="int" name="from_month" nullable="false" unsigned="true" comment="holiday from month"/>
+        <column xsi:type="int" name="from_year" nullable="false" unsigned="true" comment="holiday from year"/>
+
+        <column xsi:type="int" name="to_day" nullable="false" unsigned="true" comment="holiday to day"/>
+        <column xsi:type="int" name="to_month" nullable="false" unsigned="true" comment="holiday to month"/>
+        <column xsi:type="int" name="to_year" nullable="false" unsigned="true" comment="holiday to year"/>
+
+        <column xsi:type="varchar" name="description" length="255" comment="holiday description"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="holiday_id"/>
+        </constraint>
+    </table>
+    <table name="test_delivery_holidays_store" resource="default">
+        <column xsi:type="int" name="holiday_id" nullable="false" unsigned="true" comment="holiday Id"/>
+        <column xsi:type="int" name="store_id" nullable="false" unsigned="true" comment="holiday store Id"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="holiday_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="DELIVERY_HOLIDAY_HOLIDAY_ID_DELIVERY_HOLIDAY_STORE_HOLIDAY_ID" table="test_delivery_holidays_store" column="holiday_id"
+                    referenceTable="test_delivery_holidays" referenceColumn="holiday_id" onDelete="CASCADE"/>
+    </table>
+</schema>

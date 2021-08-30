@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="test_custom_sales_email_order_template" label="New Order - Test"
+              file="custom_order_new.html" type="html" module="Test_Delivery" area="frontend"/>
+    <template id="test_custom_sales_email_invoice_new_template" label="New Invoice - Test"
+              file="custom_invoice_new.html" type="html" module="Test_Delivery" area="frontend"/>
+    <template id="test_custom_sales_email_shipment_new_template" label="New Shipment - Test"
+              file="custom_shipment_new.html" type="html" module="Test_Delivery" area="frontend"/>
+</config>

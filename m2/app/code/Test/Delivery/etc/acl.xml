@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Test Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.test.com)
+ * @package Test_Delivery
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Sales::sales">
+                    <resource id="Test_Delivery::delivery" title="Test Delivery Date" translate="title" sortOrder="1">
+                        <resource id="Test_Delivery::timeinterval" title="Time Interval" />
+                        <resource id="Test_Delivery::holiday" title="Delivery holiday" />
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Test_Delivery::config" title="Test Delivery Settings" sortOrder="21215" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

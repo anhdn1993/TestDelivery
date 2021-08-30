@@ -1,0 +1,9 @@
+<?php
+/** @var Test\Delivery\Helper\Data $helper */
+$helper = $this->helper(Test\Delivery\Helper\Data::class);
+?>
+<?php if ($helper->allowDisplayOnBackend($helper::DELIVERY_DATE)) : ?>
+    <div class="block block-order-details-view" style="margin-bottom: 0 !important;">
+        <p><label><?= __('Delivery Date : ')?></label><span><?= $block->getDeliveryDate()?></span></p>
+    </div>
+<?php endif; ?>

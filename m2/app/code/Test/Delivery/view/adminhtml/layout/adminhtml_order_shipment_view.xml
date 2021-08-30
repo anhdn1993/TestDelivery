@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="extra_customer_info">
+            <block name="delivery_date_admin"
+                   template="Test_Delivery::order/delivery_date.phtml"
+                   class="Test\Delivery\Block\DeliveryDateShipment"
+                   after="-"
+                   ifconfig="icdelivery/general/enabled"/>
+            <block name="delivery_time_admin"
+                   template="Test_Delivery::order/delivery_time.phtml"
+                   class="Test\Delivery\Block\DeliveryTimeShipment"
+                   ifconfig="icdelivery/general/enabled"
+                   after="delivery_date_admin"/>
+            <block name="delivery_comment_admin"
+                   template="Test_Delivery::order/delivery_comment.phtml"
+                   class="Test\Delivery\Block\DeliveryCommentShipment"
+                   ifconfig="icdelivery/general/enabled"
+                   after="delivery_date_admin"/>
+        </referenceContainer>
+    </body>
+</page>

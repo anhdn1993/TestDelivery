@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+<!--        <referenceBlock name="content">-->
+<!--            <block name="delivery_date"-->
+<!--                   template="Test_Delivery::order/delivery_date.phtml"-->
+<!--                   class="Test\Delivery\Block\DeliveryDate"-->
+<!--                   after="-"-->
+<!--                   ifconfig="icdelivery/general/enabled"/>-->
+<!--            <block name="delivery_time"-->
+<!--                   template="Test_Delivery::order/delivery_time.phtml"-->
+<!--                   class="Test\Delivery\Block\DeliveryTime"-->
+<!--                   ifconfig="icdelivery/general/enabled"-->
+<!--                   after="delivery_date"/>-->
+<!--            <block name="delivery_comment"-->
+<!--                   template="Test_Delivery::order/delivery_comment.phtml"-->
+<!--                   class="Test\Delivery\Block\DeliveryComment"-->
+<!--                   ifconfig="icdelivery/general/enabled"-->
+<!--                   after="delivery_time"-->
+<!--            />-->
+<!--        </referenceBlock>-->
+
+        <referenceContainer name="content">
+            <block class="Test\Delivery\Block\DeliveryInformation"
+                   name="delivery_information_shipment"
+                   template="Test_Delivery::order/information.phtml"
+                   after="-" />
+        </referenceContainer>
+    </body>
+</page>

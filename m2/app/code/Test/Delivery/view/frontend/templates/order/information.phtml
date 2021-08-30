@@ -1,0 +1,23 @@
+<?php
+/** @var Test\Delivery\Block\DeliveryInformation $block */
+?>
+<?php if ($block->getDeliveryGeneralEnabled() && ($block->allowDeliveryDateInclude() || $block->allowDeliveryTimeInclude() || $block->allowDeliveryCommentInclude())) : ?>
+<div class="box box-order-delivery-information">
+    <strong class="box-title">
+        <span><?= __("Delivery Information"); ?></span>
+    </strong>
+    <div class="box-content">
+        <?php if ($block->allowDeliveryDateInclude() && $block->getDeliveryDate()) : ?>
+        <span><?= __("Delivery Date : "); ?> <?= $block->getDeliveryDate(); ?></span> <br>
+        <?php endif; ?>
+
+        <?php if ($block->allowDeliveryTimeInclude() && $block->getDeliveryTime()) : ?>
+        <span><?= __("Delivery Time : "); ?> <?= $block->getDeliveryTime(); ?></span> <br>
+        <?php endif; ?>
+
+        <?php if ($block->allowDeliveryCommentInclude() && $block->getDeliveryComment()) : ?>
+        <span><?= __("Delivery Comment : "); ?> <?= $block->getDeliveryComment(); ?></span> <br>
+        <?php endif; ?>
+    </div>
+</div>
+<?php endif; ?>

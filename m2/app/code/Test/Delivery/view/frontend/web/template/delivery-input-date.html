@@ -1,0 +1,22 @@
+<div id="show-delivery-date" data-bind="style:{ 'display' :  showByShippingSelect }">
+    <div class="control">
+        <label class="label">Delivery Date<span style="color: #e02b27; margin: 0 0 0 5px" data-bind="text: contenDatetRequired"></span></label>
+        </br><span data-bind="html: contentNoteDate"></span>
+        <input class="input-text" type="text" data-bind="datepicker: true, attr: {'aria-required': dateCheckRequired}"  name="delivery-date" id="delivery-date" readonly="true"/>
+        <!--<button type="button" class="ui-datepicker-trigger v-middle"><span>undefined</span></button>-->
+    </div>
+
+    <div class="control" data-bind="visible: getDisabledTime">
+        <label class="label">Delivery Time<span style="color: #e02b27; margin: 0 0 0 5px" data-bind="text: contentTimeRequired"/></label>
+        </br><span data-bind="html: contentNoteTime"></span>
+        <select class="select" data-bind="options: availableCountries"  name="delivery-time" id="delivery-time" readonly="true"> </select>
+    </div>
+
+
+    <div class="control" data-bind="visible: getDisabledComment">
+        <label class="label">Comment<span style="color: #e02b27; margin: 0 0 0 5px" data-bind="text: contentCommentRequired"/></label>
+        </br><span data-bind="html: contentNoteComment"></span>
+        <textarea name="delivery-comment" id="delivery-comment"></textarea>
+    </div>
+    <br/>
+</div>

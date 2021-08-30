@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="Test\Delivery\Model\ResourceModel\TimeInterval\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">test_delivery_time_interval</argument>
+            <argument name="resourceModel" xsi:type="string">Test\Delivery\Model\ResourceModel\TimeInterval</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Test\Delivery\Model\ResourceModel\Holiday\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">test_delivery_holidays</argument>
+            <argument name="resourceModel" xsi:type="string">Test\Delivery\Model\ResourceModel\Holiday</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Test\Delivery\Model\ResourceModel\TimeInterval\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">test_delivery_time_interval</argument>
+            <argument name="eventPrefix" xsi:type="string">test_delivery_time_interval_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">test_delivery_time_interval_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Test\Delivery\Model\ResourceModel\TimeInterval</argument>
+        </arguments>
+    </type>
+
+    <type name="Test\Delivery\Model\ResourceModel\Holiday\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">test_delivery_holidays</argument>
+            <argument name="eventPrefix" xsi:type="string">test_delivery_holidays_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">test_delivery_holidays_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Test\Delivery\Model\ResourceModel\Holiday</argument>
+        </arguments>
+    </type>
+
+    <!--<preference for="Test\Delivery\Api\TimeIntervalRepositoryInterface" type="Test\Delivery\Model\TimeIntervalRepository" />
+    <preference for="Test\Delivery\Api\Data\TimeIntervalSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+-->
+</config>

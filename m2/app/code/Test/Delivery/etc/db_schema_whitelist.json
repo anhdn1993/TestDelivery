@@ -1,0 +1,30 @@
+{
+    "test_delivery_holidays": {
+        "column": {
+            "holiday_id": true,
+            "each_year": true,
+            "each_month": true,
+            "from_day": true,
+            "from_month": true,
+            "to_day": true,
+            "to_month": true,
+            "description": true,
+            "from_year": true,
+            "to_year": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "test_delivery_holidays_store": {
+        "column": {
+            "holiday_id": true,
+            "store_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_ED22CB9A89BA93269451A27664F27DED": true,
+            "FK_F719326DE3DB700EE81AF23B0C46DAB1": true
+        }
+    }
+}

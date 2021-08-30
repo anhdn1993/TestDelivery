@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+
+    <preference for="Test\Delivery\Api\Data\ShippingDeliveryInterface" type="Test\Delivery\Model\ShippingDelivery" />
+
+    <preference for="Test\Delivery\Api\TimeIntervalRepositoryInterface" type="Test\Delivery\Model\TimeIntervalRepository" />
+    <preference for="Test\Delivery\Api\ShippingDeliveryRepositoryInterface" type="Test\Delivery\Model\ShippingDeliveryRepository" />
+
+    <preference for="Test\Delivery\Api\DeliveryHolidayRepositoryInterface" type="Test\Delivery\Model\HolidayRepository" />
+    <preference for="Test\Delivery\Api\Data\DeliveryHolidaySearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+
+    <preference for="Test\Delivery\Api\Data\ShippingDeliverySearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Test\Delivery\Api\Data\TimeIntervalSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="test_delivery_date_model_plugin_shipping_information_management" type="Test\Delivery\Plugin\Checkout\Model\Checkout\ShippingInformationManagement" disabled="false" sortOrder="13" />
+    </type>
+
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="test_delivery_date_model_plugin_shipping_information_management" type="Test\Delivery\Plugin\Checkout\Model\Checkout\OrderRepository" disabled="false" sortOrder="13" />
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="testdelivery_holiday_listing_data_source" xsi:type="string">Test\Delivery\Model\ResourceModel\Holiday\Grid\Collection</item>
+                <item name="testdelivery_timeinterval_listing_data_source" xsi:type="string">Test\Delivery\Model\ResourceModel\TimeInterval\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sales_order_grid_data_source" xsi:type="string">Test\Delivery\Model\ResourceModel\Order\Grid\Collection</item>
+                <item name="sales_order_invoice_grid_data_source" xsi:type="string">Test\Delivery\Model\ResourceModel\Order\Invoice\Grid\Collection</item>
+                <item name="sales_order_shipment_grid_data_source" xsi:type="string">Test\Delivery\Model\ResourceModel\Order\Shipment\Grid\Collection</item>
+                <item name="sales_order_creditmemo_grid_data_source" xsi:type="string">Magento\Sales\Model\ResourceModel\Order\Creditmemo\Grid\Collection</item>
+                <item name="sales_order_view_invoice_grid_data_source" xsi:type="string">Magento\Sales\Model\ResourceModel\Order\Invoice\Orders\Grid\Collection</item>
+                <item name="sales_order_view_shipment_grid_data_source" xsi:type="string">Magento\Sales\Model\ResourceModel\Order\Shipment\Order\Grid\Collection</item>
+                <item name="sales_order_view_creditmemo_grid_data_source" xsi:type="string">Magento\Sales\Model\ResourceModel\Order\Creditmemo\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Checkout\Api\GuestPaymentInformationManagementInterface">
+        <plugin name="test-validate-guest-agreements" type="Test\Delivery\Plugin\Checkout\GuestValidation"/>
+    </type>
+    <type name="Magento\Checkout\Api\PaymentInformationManagementInterface">
+        <plugin name="test-validate-agreements" type="Test\Delivery\Plugin\Checkout\Validation"/>
+    </type>
+    <preference for="Magento\Sales\Model\Order\Pdf\Shipment" type="Test\Delivery\Model\Order\Pdf\Shipment"/>
+    <preference for="Magento\Sales\Model\Order\Pdf\Invoice" type="Test\Delivery\Model\Order\Pdf\Invoice"/>
+</config>

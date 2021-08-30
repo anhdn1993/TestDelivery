@@ -1,0 +1,24 @@
+<?php if ($block->getData('allowPrint')) : ?>
+<tr class="email-delivery-information">
+    <td>
+        <table class="delivery-infor">
+            <tr>
+                <td class="address-details">
+                    <h3><?= __("Delivery Information"); ?></h3>
+                    <p>
+                        <?php if ($block->getData('allowDeliveryDateInclude')) : ?>
+                            <?= __("Delivery Date : ") . $block->getData('deliveryDate'); ?> <br/>
+                        <?php endif; ?>
+                        <?php if ($block->getData('allowDeliveryTimeInclude')) : ?>
+                            <?= __("Delivery Time : ") . $block->getData('deliveryTime'); ?> <br/>
+                        <?php endif; ?>
+                        <?php if ($block->getData('allowDeliveryCommentInclude')) : ?>
+                            <?= __("Delivery Comment : ") . $block->getData('deliveryComment'); ?> <br/>
+                        <?php endif; ?>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<?php endif; ?>

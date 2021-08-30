@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Test_Delivery::delivery"
+             title="Test Delivery"
+             module="Test_Delivery"
+             sortOrder="100"
+             resource="Test_Delivery::delivery"
+             parent="Magento_Sales::sales"/>
+
+        <add id="Test_Delivery::timeinterval"
+             title="Time Interval"
+             module="Test_Delivery"
+             sortOrder="20"
+             parent="Test_Delivery::delivery"
+             action="testdelivery/timeinterval/index"
+             resource="Test_Delivery::timeinterval"/>
+
+        <add id="Test_Delivery::holiday"
+             title="Date holiday"
+             module="Test_Delivery"
+             sortOrder="19"
+             parent="Test_Delivery::delivery"
+             action="testdelivery/holiday/index"
+             resource="Test_Delivery::holiday"/>
+    </menu>
+</config>

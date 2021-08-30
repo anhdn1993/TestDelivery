@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+        <default>
+            <icdelivery>
+                <general>
+                    <enabled>0</enabled>
+                    <disable_delivery_on>0,6</disable_delivery_on>
+                    <delivery_date_format>yy-mm-dd</delivery_date_format>
+                    <max_delivery_interval>10</max_delivery_interval>
+                </general>
+                <test_delivery_time>
+                    <delivery_time_enabled>1</delivery_time_enabled>
+                </test_delivery_time>
+                <test_delivery_comment>
+                      <delivery_comment_enabled>1</delivery_comment_enabled>
+              </test_delivery_comment>
+            </icdelivery>
+            <Test_Delivery>
+                <guide>https://bluecom.atlassian.net/wiki/spaces/MG/pages/1675952314/Delivery+Date</guide>
+            </Test_Delivery>
+        </default>
+    </config>

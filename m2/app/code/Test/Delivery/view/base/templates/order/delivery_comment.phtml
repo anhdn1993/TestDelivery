@@ -1,0 +1,9 @@
+<?php
+/** @var Test\Delivery\Helper\Data $helper */
+$helper = $this->helper(Test\Delivery\Helper\Data::class);
+?>
+<?php if ($helper->allowDisplayOnBackend($helper::DELIVERY_COMMENT)) : ?>
+    <div class="block-content">
+        <p><label><?= __('Comment:')?></label><span><?= $block->getDeliveryComment()?></span></p>
+    </div>
+<?php endif; ?>

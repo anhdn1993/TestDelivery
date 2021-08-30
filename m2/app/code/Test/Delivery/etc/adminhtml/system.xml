@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="icdelivery" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Delivery Dates</label>
+            <tab>test</tab>
+            <resource>Test_Delivery::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Select Yes to enable this module</comment>
+                </field>
+                <field id="disable_delivery_on" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Disable Delivery On</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Weekdays</source_model>
+                    <comment>Select day disable delivery</comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="max_delivery_interval" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Maximal Delivery Interval</label>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                    <comment>In days</comment>
+                </field>
+            </group>
+            <group id="test_delivery_date" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Delivery Date</label>
+                <field id="delivery_date_format" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Date Format</label>
+                    <source_model>Test\Delivery\Model\Config\Source\FomatDate</source_model>
+                </field>
+                <field id="delivery_date_is_required" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delivery_date_include_into" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Include Into</label>
+                    <source_model>Test\Delivery\Model\Config\Source\ListInclude</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_date_display_on" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display On</label>
+                    <source_model>Test\Delivery\Model\Config\Source\ListDisplayOn</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_date_filed_note" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Field Note</label>
+                </field>
+                <field id="delivery_date_select_customer_group" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show For Selected Customer Groups Only</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delivery_date_customer_group" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display On</label>
+                    <source_model>Magento\Customer\Model\Customer\Attribute\Source\Group</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_date_select_shipping_method" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show For Selected Shipping Methods Only</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delivery_date_shipping_method" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display On</label>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+            <group id="test_delivery_time" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Delivery Time</label>
+                <field id="delivery_time_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Delivery Time</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        In order to make Delivery Time option work, please specify Time Intervals in Sales -> Time Intervals first.</comment>
+                </field>
+                <field id="delivery_time_is_required" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delivery_time_include_into" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Include Into</label>
+                    <source_model>Test\Delivery\Model\Config\Source\ListInclude</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_time_display_on" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display On</label>
+                    <source_model>Test\Delivery\Model\Config\Source\ListDisplayOn</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_time_filed_note" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Field Note</label>
+                </field>
+            </group>
+            <group id="test_delivery_comment" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Comment Field</label>
+                <field id="delivery_comment_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Comments Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delivery_comment_is_required" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delivery_comment_limit" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Limmit for Comment</label>
+                </field>
+                <field id="delivery_comment_include_into" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Include Into</label>
+                    <source_model>Test\Delivery\Model\Config\Source\ListInclude</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_comment_display_on" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Display On</label>
+                    <source_model>Test\Delivery\Model\Config\Source\ListDisplayOn</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="delivery_comment_filed_note" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Field Note</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
+

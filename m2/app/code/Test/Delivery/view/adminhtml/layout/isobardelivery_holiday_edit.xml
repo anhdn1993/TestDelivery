@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="content">
+        <block class="Test\Delivery\Block\Adminhtml\Holiday\Edit" name="test_delivery_holiday_edit"/>
+    </referenceContainer>
+    <referenceContainer name="left">
+        <block class="Test\Delivery\Block\Adminhtml\Holiday\Edit\Tabs" name="test_delivery_holiday_tabs">
+            <block class="Test\Delivery\Block\Adminhtml\Holiday\Edit\Tab\Holiday" name="test_delivery_holiday_edit_tab_slider"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">holiday</argument>
+                <argument name="block" xsi:type="string">test_delivery_holiday_edit_tab_slider</argument>
+            </action>
+        </block>
+    </referenceContainer>
+</body>
+</page>
